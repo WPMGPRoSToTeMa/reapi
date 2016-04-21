@@ -47,7 +47,7 @@ void setupArgTypes(AType args_type[MAX_ARGS])
 }
 
 template<size_t current = 0, typename T, typename ...t_args>
-void setupArgTypes(AType args_type[MAX_ARGS], T arg, t_args... args)
+void setupArgTypes(AType args_type[MAX_ARGS], T, t_args... args)
 {
 	args_type[current] = getApiType(T());
 	if (sizeof...(args) && current + 1 < MAX_ARGS)
